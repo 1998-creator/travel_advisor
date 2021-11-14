@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Travel_Advisor
+A travel companion app that uses react.js google maps, geo-location, google maps API, and special travel 
+and weather rapid APIs. Allows the user to type a location or scroll on a google map in order to find
+restaurants, hotels, or attractions in whatever area they are looking. The can select a specific item 
+they want to view and look at the details of the item like pricing or reviews.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
