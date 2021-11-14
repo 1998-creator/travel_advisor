@@ -4,6 +4,8 @@ and weather rapid APIs. Allows the user to type a location or scroll on a google
 restaurants, hotels, or attractions in whatever area they are looking. The can select a specific item 
 they want to view and look at the details of the item like pricing or reviews.
 
+Check it out here: https://travel-advisor-1.netlify.app/
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
