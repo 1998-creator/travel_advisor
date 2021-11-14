@@ -1,43 +1,27 @@
-import React from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActions,
-  Chip,
-} from "@material-ui/core";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import PhoneIcon from "@material-ui/icons/Phone";
-import Rating from "@material-ui/lab/Rating";
+import React from 'react';
+import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip } from '@material-ui/core';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import PhoneIcon from '@material-ui/icons/Phone';
+import Rating from '@material-ui/lab/Rating';
 
-import useStyles from "./styles.js";
+import useStyles from './styles.js';
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place, selected, refProp }) => {
+  if (selected) refProp?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   const classes = useStyles();
 
   return (
-    <Card>
+    <Card elevation={6}>
       <CardMedia
         style={{ height: 350 }}
-        image={
-          place.photo
-            ? place.photo.images.large.url
-            : "https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg"
-        }
+        image={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
         title={place.name}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5">
-          {place.name}
-        </Typography>
+        <Typography gutterBottom variant="h5">{place.name}</Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
           <Rating name="read-only" value={Number(place.rating)} readOnly />
-          <Typography component="legend">
-            {place.num_reviews} review{place.num_reviews > 1 && "s"}
-          </Typography>
+          <Typography component="legend">{place.num_reviews} review{place.num_reviews > 1 && 's'}</Typography>
         </Box>
         <Box display="flex" justifyContent="space-between">
           <Typography component="legend">Price</Typography>
@@ -53,7 +37,7 @@ const PlaceDetails = ({ place }) => {
         </Box>
         {place?.awards?.map((award) => (
           <Box display="flex" justifyContent="space-between" my={1} alignItems="center">
-            <img src={award.images.small} alt={''} />
+            <img src={award.images.small} />
             <Typography variant="subtitle2" color="textSecondary">{award.display_name}</Typography>
           </Box>
         ))}
